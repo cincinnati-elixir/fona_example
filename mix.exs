@@ -39,7 +39,8 @@ defmodule FonaExample.MixProject do
     [
       {:nerves, "~> 1.0", runtime: false},
       {:shoehorn, "~> 0.2"},
-      {:fona, path: "../fona"}
+      {:fona, "~> 0.1.0"},
+      {:httpoison, "~> 1.0"}
     ] ++ deps(@target)
   end
 
@@ -53,6 +54,6 @@ defmodule FonaExample.MixProject do
     ] ++ system(target)
   end
 
-  defp system("rpi0"), do: [{:fona_system_rpi0, path: "../fona_system_rpi0", runtime: false}]
+  defp system("rpi0"), do: [{:fona_system_rpi0, "~> 1.0.0", runtime: false}]
   defp system(target), do: Mix.raise("Unknown MIX_TARGET: #{target}")
 end
