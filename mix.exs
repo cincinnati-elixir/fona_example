@@ -54,6 +54,6 @@ defmodule FonaExample.MixProject do
     ] ++ system(target)
   end
 
-  defp system("rpi0"), do: [{:fona_system_rpi0, "~> 1.0.0", runtime: false}]
+  defp system("rpi0"), do: [{:fona_system_rpi0, github: "cincinnati-elixir/fona_system_rpi0", runtime: false}]
   defp system(target), do: Mix.raise("Unknown MIX_TARGET: #{target}")
 end
